@@ -218,7 +218,7 @@ i {
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-
+min-width: 250px;
   white-space: pre;
   padding: 0.5rem;
   border-radius: 8px;

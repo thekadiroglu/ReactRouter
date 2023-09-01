@@ -32,9 +32,13 @@ export default function Contact() {
   }, []);
 
   const handleButtonClick = () => {
-    setMessages([...messages, message]);
-    setMessage("");
-    saveMessagesToLocalStorage([...messages, message]);
+    if (message.trim() === "") {
+      return;
+    }
+    else{ setMessages([...messages, message]);
+      setMessage("");
+      saveMessagesToLocalStorage([...messages, message]);}
+   
   };
 
   function saveMessagesToLocalStorage(messages) {
@@ -132,6 +136,7 @@ export default function Contact() {
         </button>
       </div>
       <div>
+        
         {messages.map((msg, index) => (
           <p key={index.id} className="msg">
             {msg}{" "}
