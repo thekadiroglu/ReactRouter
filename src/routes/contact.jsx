@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Form, useLoaderData, useFetcher, } from "react-router-dom";
 import { getContact, updateContact } from "../contacts";
-
+import ErrorMsg from "./errorMsg";
 export async function loader({ params }) {
   const contact = await getContact(params.contactId);
   return { contact };
@@ -31,9 +31,10 @@ export default function Contact() {
     }
   }, []);
 
-  const handleButtonClick = () => {
+  let handleButtonClick = () => {
     if (message.trim() === "") {
       return;
+      
     }
     else{ setMessages([...messages, message]);
       setMessage("");
@@ -136,7 +137,6 @@ export default function Contact() {
         </button>
       </div>
       <div>
-        
         {messages.map((msg, index) => (
           <p key={index.id} className="msg">
             {msg}{" "}
