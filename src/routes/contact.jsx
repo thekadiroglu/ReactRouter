@@ -36,14 +36,16 @@ export default function Contact() {
       return;
       
     }
-    else{ setMessages([...messages, message]);
+    else {
+      const newMessage = { text: message, contactId: contact.id };
+      setMessages([...messages, newMessage]);
       setMessage("");
-      saveMessagesToLocalStorage([...messages, message]);}
+      saveMessagesToLocalStorage([...messages, newMessage]);}
    
   };
 
   function saveMessagesToLocalStorage(messages) {
-    localStorage.setItem("messages", JSON.stringify(messages));
+    localStorage.setItem(`message_${contact.id}`, JSON.stringify(messages));
   }
 
   function deleteMessage(index) {
@@ -132,20 +134,23 @@ export default function Contact() {
           onChange={sendMessage}
           value={message}
         />
+        <input type="file" aria-label="message" name="message" onChange={sendMessage} />
         <button className="btn" type="button" onClick={handleButtonClick}>
           Send
         </button>
       </div>
       <div>
-        {messages.map((msg, index) => (
-          <p key={index.id} className="msg">
-            {msg}{" "}
-            <i
-              onClick={() => deleteMessage(index)}
-              className="fa-solid fa-xmark"
-            ></i>
-          </p>
-        ))}
+      {messages
+    .filter((msg) => msg.contactId === contact.id)
+    .map((msg, index) => (
+      <p key={index.id} className="msg">
+        {msg.text}{" "}
+        <i
+          onClick={() => deleteMessage(index)}
+          className="fa-solid fa-xmark"
+        ></i>
+      </p>
+    ))}
       </div>
     </div>
   );
