@@ -1,8 +1,8 @@
 {
-  "homepage": "https://thekadiroglu.github.io/ReactRouter",
+  "homepage": "http://thekadiroglu.github.io/ReactRouter",
   "name": "name-of-your-project",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,7 +10,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy":"npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "localforage": "^1.10.0",
