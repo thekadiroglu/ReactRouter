@@ -5,7 +5,7 @@ export default function Index() {
       <br />
       Check out{" "}
       <a href="http://emirhankadiroglu.me/">
-        this link with go ahead
+        this link with myWebsite go ahead
       </a>
       .
     </p>

@@ -66,7 +66,6 @@ export default function Contact() {
           alt={`${contact.first} ${contact.last}`}
         />
       </div>
-
       <div>
         <h1>
           {contact.first || contact.last ? (

@@ -10,8 +10,8 @@ import {
   useSubmit,
   useNavigate,
 } from "react-router-dom";
-import Index from "./index";
 import { getContacts, createContact } from "../contacts";
+import Header from "./components/header"
 
 export async function action() {
   const contact = await createContact();
@@ -24,7 +24,6 @@ export async function loader({ request }) {
   const contacts = await getContacts(q);
   return { contacts, q };
 }
-
 export default function Root() {
   const { contacts, q } = useLoaderData();
   const navigation = useNavigation();
@@ -112,6 +111,11 @@ export default function Root() {
           navigation.state === "loading" ? "loading" : ""
         }
       >
+          <Header
+          firstName={contacts.length > 0 ? contacts[0].first : ''}
+          lastName={contacts.length > 0 ? contacts[0].last : ''}
+          avatar={contacts.length > 0 ? contacts[0].avatar : ''}
+        />
         {contacts.length === 0 ? (
           <p>
             İçerisi boş, bir şeyler ekle

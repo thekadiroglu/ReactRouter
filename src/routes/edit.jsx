@@ -5,8 +5,7 @@ import {
   redirect,
   useNavigate,
 } from "react-router-dom";
-
-import { updateContact } from "../contacts";
+import Header from "./components/header";
 
 export async function action({ request, params }) {
   const formData = await request.formData();
@@ -30,6 +29,7 @@ export default function EditContact() {
   };
 
   return (
+    <>
     <Form method="post" id="contact-form" onSubmit={handleSubmit}>
       <p>
         <span>Name</span>
@@ -63,7 +63,7 @@ export default function EditContact() {
         <input
           type="text"
           name="twitter"
-          placeholder="@jack"
+          placeholder="@tom"
           defaultValue={contact.twitter}
         />
       </label>
@@ -94,6 +94,7 @@ export default function EditContact() {
           Cancel
         </button>
       </p>
-    </Form>
+      </Form>
+      </>
   );
 }
