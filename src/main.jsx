@@ -13,6 +13,7 @@ import EditContact, {
 import Root, { loader as rootLoader,  action as rootAction, } from "./routes/root";
 import { action as destroyAction } from "./routes/destroy";
 import Index from "./routes/index";
+import Login from "./routes/login"
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
     element: <EditContact />,
     loader: contactLoader,
     action: editAction,
+  },
+  {
+    path: "login",
+    element: <Login />,
   },
 ]);
 

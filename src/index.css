@@ -5,6 +5,8 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  list-style: none;
+  text-decoration: none;
 }
 
 body {
@@ -425,6 +427,59 @@ min-width: 250px;
 }
 .name.h1,h4{
   line-height: 0;
+}
+.container{
+  display: flex;
+  justify-content: center; /* Yatayda ortala */
+  align-items: center; /* Dikeyde ortala */
+  height: 100vh; /* Sayfa yüksekliği kadar */
+  width: 100%;
+  background-image: url(../public/magicpattern-confetti-1694007071877.svg);
+}
+.form{
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+}
+.headerBtn{
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.loginBtn{
+  background-color: #3992ff;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+}
+.headerBtn a{
+  color: #fff;
+  height: 40px;
+  width: 150px;
+  
+}
+.complete-button{
+  cursor: pointer;
+  margin-top: 15px;
+}
+.userImg{
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 754px){
+  .header{
+    display: block;
+    padding: 15px;
+  }
 }
 @media (max-width: 600px) {
   #root{
