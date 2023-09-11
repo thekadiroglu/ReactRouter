@@ -240,6 +240,9 @@ min-width: 250px;
 #sidebar nav a.pending {
   color: hsl(224, 98%, 58%);
 }
+#sidebar nav a.red {
+  color: hsl(0, 98%, 58%);
+}
 
 #detail {
   flex: 1;

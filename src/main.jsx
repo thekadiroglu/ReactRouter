@@ -34,18 +34,19 @@ const router = createBrowserRouter([
         action: destroyAction,
         errorElement: <div>Oops! There was an error.</div>,
       },
+      {
+        path: "contacts/:contactId/edit",
+        element: <EditContact/>,
+        loader: contactLoader,
+        action: editAction,
+      },
     ],
   },
   {
     path: "contacts/:contactId",
     element: <Contact />,
   },
-  {
-    path: "contacts/:contactId/edit",
-    element: <EditContact />,
-    loader: contactLoader,
-    action: editAction,
-  },
+  
   {
     path: "login",
     element: <Login />,

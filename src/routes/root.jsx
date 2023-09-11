@@ -28,7 +28,7 @@ export default function Root() {
   const { contacts, q } = useLoaderData();
   const navigation = useNavigation();
   const [selectedContactId, setSelectedContactId] = useState(null);
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const submit = useSubmit();
   const searching =
     navigation.location &&
@@ -116,6 +116,7 @@ export default function Root() {
           lastName={contacts.length > 0 ? contacts[0].last : ''}
           avatar={contacts.length > 0 ? contacts[0].avatar : ''}
         />
+        
         {contacts.length === 0 ? (
           <p>
             İçerisi boş, bir şeyler ekle

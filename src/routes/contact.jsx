@@ -155,20 +155,3 @@ export default function Contact() {
   );
 }
 
-function Favorite({ contact }) {
-  return (
-    <fetcher.Form method="post">
-      <button
-        name="favorite"
-        value={contact.favorite ? "false" : "true"}
-        aria-label={
-          contact.favorite
-            ? "Remove from favorites"
-            : "Add to favorites"
-        }
-      >
-        {contact.favorite ? "★" : "☆"}
-      </button>
-      </fetcher.Form>
-  );
-}
