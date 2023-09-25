@@ -21,6 +21,14 @@ function Login() {
     setIsInfoComplete(true);
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const userData = new UserData(event.target);
+    const updates = Object.fromEntries(userData);
+    await updateContact(contact.id, updates);
+    navigate(`/contacts/${user.id}`);
+  };
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUser((prevUser) => ({
@@ -30,7 +38,7 @@ function Login() {
   };
 
   return (
-    <Form method="post" id="contact-form" onSubmit={handleSubmit}>
+    
     <div className='container'>
       <div className="form">
         <h2>Giriş Yap</h2>
@@ -53,10 +61,10 @@ function Login() {
         <input type="file" accept="image/*" onChange={handleImageChange} />
         <br />
         {user.avatar && <img className='homeimage' src={user.avatar} alt="Selected" />}
-        <Link to={"/"}><button className="complete-button">Bilgiler Tamamlandı</button></Link> 
+        <Link to={"/"}><button className="complete-button">Bilgiler Tamamla</button></Link> 
       </div>
       </div>
-      </Form>
+      
   );
 }
 
