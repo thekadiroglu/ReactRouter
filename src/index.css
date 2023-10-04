@@ -447,7 +447,7 @@ min-width: 250px;
   border-radius: 10px;
   padding: 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  
+  background-color: rgba(250, 250, 250, 0.93);
 }
 .headerBtn{
   display: flex;
@@ -473,6 +473,11 @@ min-width: 250px;
 .complete-button{
   cursor: pointer;
   margin-top: 15px;
+  transition: 0.3s;
+}
+.complete-button:hover{
+  background-color: #3992ff;
+  color: #fff;
 }
 .userImg{
   display: flex;
@@ -490,5 +495,11 @@ min-width: 250px;
   }
   #sidebar{
     width: 100%;
+  }
+  .form{
+    max-width: 250px;
+  }
+  .form input{
+    width: 200px;
   }
 }
