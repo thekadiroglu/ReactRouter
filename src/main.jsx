@@ -40,16 +40,16 @@ const router = createBrowserRouter([
         loader: contactLoader,
         action: editAction,
       },
+      
     ],
+  },
+  {
+    path: "login",
+    element: <Login />,
   },
   {
     path: "contacts/:contactId",
     element: <Contact />,
-  },
-  
-  {
-    path: "login",
-    element: <Login />,
   },
 ]);
 
